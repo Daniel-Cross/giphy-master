@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SearchForm = (props) => {
 	const { handleChange, search, handleSubmit } = props;
@@ -10,6 +11,12 @@ const SearchForm = (props) => {
 			</form>
 		</div>
 	);
+};
+
+SearchForm.propTypes = {
+	handleChange: PropTypes.func.isRequired,
+	handleSubmit: PropTypes.func.isRequired,
+	value: PropTypes.string.isRequired,
 };
 
 export default SearchForm;
