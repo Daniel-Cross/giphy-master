@@ -1,27 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './components/SearchForm';
+import Results from './components/Results';
+import getGifs from './services/getGif';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			search: '',
+			results: [],
 			submit: false,
 		};
 	}
 
 	handleChange = (e) => {
+		const { name, value } = e.target;
 		this.setState({
-			search: e.target.value,
+			[name]: value,
 		});
 	};
 
 	handleSubmit = (e) => {
+		const { search } = this.state;
 		e.preventDefault();
-		this.setState((state) => ({
-			submit: !state.submit,
-		}));
+
+		getGifs(search).then((data) => {
+			this.setState({
+				results: data,
+			});
+		});
 	};
 
 	render() {
@@ -32,6 +40,7 @@ class App extends Component {
 					handleSubmit={this.handleSubmit}
 					search={this.state.search}
 				/>
+				<Results />
 			</div>
 		);
 	}
