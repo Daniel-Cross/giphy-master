@@ -1,0 +1,23 @@
+#SearchForm form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input {
+  padding: 10px 50px;
+  width: 100%;
+  font-size: 25px;
+}
+
+button {
+  padding: 10px 70px;
+  font-size: 25px;
+  background-color: rgb(83, 235, 121);
+  border: none;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
