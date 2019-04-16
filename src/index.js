@@ -5,8 +5,25 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import reducer from './reducers';
+import { searchSuccess } from './services/actions';
 
-const store = createStore(() => {});
+const store = createStore(reducer);
+
+const results = [
+	{
+		full: 'https://media2.giphy.com/media/f1fpMxNfg8GQw/giphy.gif',
+		thumbnail: 'https://media2.giphy.com/media/f1fpMxNfg8GQw/100_s.gif',
+	},
+	{
+		full: 'https://media3.giphy.com/media/Gp32KJtqe08Lu/giphy.gif',
+		thumbnail: 'https://media3.giphy.com/media/Gp32KJtqe08Lu/100_s.gif',
+	},
+];
+
+window.setTimeout(() => {
+	store.dispatch(searchSuccess(results));
+}, 2000);
 
 ReactDOM.render(
 	<Provider store={store}>

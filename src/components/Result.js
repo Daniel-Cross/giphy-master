@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Result.css';
 
 const Result = (props) => {
-	const { gif } = props;
+	const { result } = props;
+	const { thumbnail } = props.result;
 	return (
 		<div id="Result">
-			<img src={gif} alt="gif" />
+			<img src={thumbnail} alt="gif" />
 		</div>
 	);
 };
 
 Result.propTypes = {
-	gif: PropTypes.string.isRequired,
+	result: PropTypes.string.isRequired,
 };
 
 export default Result;

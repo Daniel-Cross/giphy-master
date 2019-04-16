@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './components/SearchForm';
-import Results from './components/Results';
+import Results from './components/Results.container';
 import getGifs from './services/getGif';
 
 class App extends Component {
@@ -9,7 +9,6 @@ class App extends Component {
 		super(props);
 		this.state = {
 			search: '',
-			results: [],
 		};
 	}
 
@@ -32,6 +31,7 @@ class App extends Component {
 	};
 
 	render() {
+		const { results } = this.state;
 		return (
 			<div id="App">
 				<SearchForm
