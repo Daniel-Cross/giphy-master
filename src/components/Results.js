@@ -5,7 +5,7 @@ import '../styles/Results.css';
 
 const Results = (props) => {
 	const { results } = props;
-	return <div id="Results">{results.map((result) => <Result result={result} />)}</div>;
+	return <div id="Results">{results.map((result) => <Result result={result} key={result.key} />)}</div>;
 };
 
 Results.propTypes = {

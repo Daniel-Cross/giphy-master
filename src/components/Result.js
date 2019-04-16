@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import '../styles/Result.css';
 
 const Result = (props) => {
-	const { result } = props;
 	const { thumbnail } = props.result;
 	return (
 		<div id="Result">
@@ -13,7 +12,7 @@ const Result = (props) => {
 };
 
 Result.propTypes = {
-	result: PropTypes.string.isRequired,
+	result: PropTypes.object.isRequired,
 };
 
 export default Result;

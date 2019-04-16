@@ -31,13 +31,15 @@ class App extends Component {
 	};
 
 	render() {
-		const { results } = this.state;
+		const { search } = this.state;
 		return (
 			<div id="App">
 				<SearchForm
 					handleChange={this.handleChange}
 					handleSubmit={this.handleSubmit}
-					search={this.state.search}
+					search={search}
+					value="value"
+					name="search"
 				/>
 				<Results />
 			</div>
